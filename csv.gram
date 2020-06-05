@@ -1,0 +1,20 @@
+Csv =
+
+Csv: Rows?
+
+Rows: Row ('\n Row)*
+
+Row: Value (', Value)*
+
+Value: String
+       Number
+
+String: letter+
+letter: [A-Z]
+        [a-z]
+
+Number: digit
+        nonzerodigit digit*
+digit: [0-9]
+nonzerodigit: [1-9]
+
