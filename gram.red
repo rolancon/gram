@@ -45,7 +45,7 @@ literal: [#"'" keep [number | comma | newline | string]]
 string: [any letter]
 number: ["0" | non-zero-digit any digit]
 
-; parse the gram file
+; Parse the gram file
 
 gram-grammar: read %csv.gram
 
@@ -128,12 +128,6 @@ _digit: union charset "0" _nonzerodigit
 _alphanum: union _letter _digit
 
 }
-
-; scan tree
-; get rule names
-; write each reference to rule name as name() - except when terminal
-; deal with multiple references -- name(),name()
-; recursively for each group
 
 either not empty? tree/rules [
   foreach rule tree/rules [
